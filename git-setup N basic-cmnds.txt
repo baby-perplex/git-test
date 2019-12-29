@@ -6,8 +6,18 @@ Right click on it and choose properties.
 At target remove --cd-to-home from "C:\Program Files\Git\git-bash.exe" --cd-to-home.
 At start in put the path of the directory you want it to start at for example Start in: C:\Users\prafull\Desktop\git-test
 ------------------------------------
->git init (enter)  , now this folder has been initialized to be git-repository
+>git --help   [use to see all commands]
+------------------------------------
+>git init (enter)   [now current folder has been initialized to be git-repository, and also marked as *branch-master*]
+        [git init   -> to create an empty git-repo]
+>git status  (enter)  [to know current status of folder, wil show all files of folder, initially no file added to git-repo]
+>git add .  (enter)  [all files in current-directory will be added to staging-area of my git-repo]
+              [git add    -> used to add files/folders to staging-area]
+>git status  (enter)  [now check all files are added to git-repo, means these files r ready to be commited at my git-repo]
+>git commit -m "first commit"  (enter)  [commit the current status(changes) of our folder to git-repo, after *-m* putting message there]
 
+>$ rm -f ./.git/index.lock    [to delete this file, if any error shows on that file already exists]
+>git log --oneline   [7-digit code, shows log of allcommmits put in git-repo, can use --getlog  also]
 
 
 
