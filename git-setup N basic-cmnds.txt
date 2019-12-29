@@ -1,0 +1,13 @@
+How do I run a git bash in a specific folder???
+----------------
+Type git bash in search.
+Right click on it and choose open file location.
+Right click on it and choose properties.
+At target remove --cd-to-home from "C:\Program Files\Git\git-bash.exe" --cd-to-home.
+At start in put the path of the directory you want it to start at for example Start in: C:\Users\prafull\Desktop\git-test
+------------------------------------
+>git init (enter)  , now this folder has been initialized to be git-repository
+
+
+
+
