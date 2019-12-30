@@ -2,10 +2,41 @@
 <html lang="en">
  <head>
   <title>Git-Test</title>
+  <style>
+   p{
+     color : red;
+   }
+   body{
+     background-color : #888880;
+   }
+   h1{
+     text-align : center;
+     color : #676767;
+   }
+   form{
+     line-height : 125%;
+     color : black;
+    background-color : red;
+	font-color : yellow;
+	text-align : justify;
+   }
+  </style>
  </head>
  <body>
   <h1> This is Header </h1> 
   <p> This is paragraph </p>  <!-- modifies after 1st commit -->
   <p> This is second paragraph </p> <!-- modifies after 2nd commit -->
+  <p style="color:green"> This is third paragraph in green-color </p> <!-- modifies after 2nd commit -->
+  
+  <form >
+  <fieldset>
+   <legend>Personal Details </legend>
+   <label style="float:left" >First Name: <input type="text" name="firstName"/></label> <br/>
+   <label style="float:right">Last Name: <input type="text" name="lastName"/></label><br/>
+   <label style="float:left">Age:<input type="text" name="age"/></label><br/>
+   <label style="float:right">DOB :<input type="date" name="dob"/></label><br/>
+   &nbsp;  &nbsp;<input style="text-align : centre" type="submit" value="submit"/>
+  </fieldset>
+  </form>
  </body>
 </html>

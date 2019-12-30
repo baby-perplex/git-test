@@ -1,0 +1,21 @@
+{
+  "name": "git-test",
+  "version": "1.0.0",
+  "description": "\"\"\u001b[Dthis is\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[T\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C a test-directory to learn Git and Node\"",
+  "main": "index.html",
+  "scripts": {
+    "start" : "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite" : "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://PraffulVS08@bitbucket.org/PraffulVS08/git-test.git"
+  },
+  "author": "Prafful_Perplex",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/PraffulVS08/git-test#readme",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}

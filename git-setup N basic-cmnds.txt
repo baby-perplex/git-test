@@ -1,5 +1,15 @@
-How do I run a git bash in a specific folder???
-----------------
+**Git-bash**--> It is type of "version-control": software tools that enables management of changes to source-code(maintaing version-history)
+            -->distributed version control system
+
+**To COPY text to git-bash(SHELL) --> use (shift+Insert) keys
+-----------------------------------
+#How do I run a git bash in a specific folder???
+*1st-method* :
+Go to the directory from where we want to open git-bash
+right-click on backgroung
+select Git-Bash here Option (DONE)
+-------------------
+*2nd-method* :(for permanent open to that directory)
 Type git bash in search.
 Right click on it and choose open file location.
 Right click on it and choose properties.
@@ -17,10 +27,74 @@ At start in put the path of the directory you want it to start at for example St
 >git commit -m "first commit"  (enter)  [commit the current status(changes) of our folder to git-repo, after *-m* putting message there]
 
 >$ rm -f ./.git/index.lock    [to delete this file, if any error shows on that file already exists]
->git log --oneline   [7-digit code, shows log(only 1st-few chars of commit-number) of allcommmits put in git-repo, can use --getlog  also]
+>git log --oneline   [7-digit code, shows log(only 1st-few chars of commit-number) of allcommmits put in git-repo, can use >git log  also(brief info)]
 
 after modifying any file, just type:
 >git add .    [will add all files of current dir to git-repo] and then check status(will show modified files)
 
 >git commit -m "second commit"   [2nd commit made]
+
+again after modifying any file, perform above steps.
+
+eg->
+{$ git log --oneline
+661ab08 (HEAD -> master) third commit
+11b75e2 second commit
+4dea255 first commit
+}
+
+>git checkout <commit> <file>  [checkout file from an older commit, revert back to previous status usng commits]
+                 [checkout cmnd  -> will pullout an older version of file and replace that file in current directory,and will also check it into staging area(means no need to type >git add .) ]
+>git checkout 11b75e2 index.html   (enter)  [can-see changes made after 2nd-commit has gone/washed, reverted back to older-state]
+               [reverted back to second commit, content is upto 2nd-commit only]
+
+>git reset HEAD index.html    [to reset back to original state of file,ie, after the last cmmit triggered(3rd-commit)]
+            [but changes made after 2nd-commit, that change not reverted back,see in index.html]
+
+>git status   [status shows, files are modified means changes are backedup but not showing in the file]
+
+>git checkout --(space) index.html    [will bring-back the changes which was reverted to index.html-file]
+                      [now,check index.html, changes are backed-up again to that which was after 3rd-commit]
+
+>git reset <file>     [unstage a staged file,but leave working dirctory unchanged]
+>git reset      [reset the staging area to the last commit without disturbing the working directory]
+
+----------------------------------------------------------------------------------------------------------------------
+1- cmnd for adding remote online repo :
+>git remote add origin <repo-url>
+>git remote add origin https://PraffulVS08@bitbucket.org/PraffulVS08/git-test.git   [now my local-repository remote origin is sent to bitbucket-repo]
+                  [cpoy url of repository from bitbucket and paste in git-bash using (shift+Insert)]
+Now, its time to push all content of my local-repo to my Online-Git-repo
+
+2- cmnd for push local-git-repo t origin to the master-branch :
+>git push -u origin master      [will push local-git-repo to online-git-repo]
+
+---------------------------------------------------
+error shown : (after pushing local-repoto online-repo)
+              1- protocol 'https' is not supported
+	         removing s from https also not supported,
+		 We can change origin:
+		  >git remote set-url origin <url>
+		  But this will not fix this,because we cant set new-origin,neede to fetch the master first
+		  neede to use git pull   (options)
+              2- Now, we need to remove existing origin
+	         >git remote rm origin   (enter)
+              3- Now add origin with url in quotes
+	         >git remote add origin "url"
+              4- now try to push origin to master-branch
+	         >git push -u origin master
+		  but this will also not help, as rejected message shown!! needed to first-fetch master
+	      5- now we will do forced push
+	         >git push origin +master   (using + symbol before brach_name, branch = master)
+           NOW, successfully!! transfrred local-repo to online-repo using git-commnads
+----------------------------------------------------------------------
+Q -> If someone gives us Online-Git-repository, then we need to copy it to our local-repo ??
+      use --> {{  >git clone   }}
+Solution :
+    >git clone <repository-url>    [clone an online-git-repository to our computer]   
+               {repository-url  --> open online repository-file which is tobe transfer in PC and copy url}
+-------------------------------------------------
+>mkdir temp     [git-cmnd to create directory]
+>cd temp       [cd -> to chenge directory as  like in cmd]
+
 
